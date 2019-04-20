@@ -1,5 +1,5 @@
 2.	Data Characteristics
-There are 17506 data points in this dataset, in which 8753 are marked as training data, 5376 are marked as test data and the rest is validate data. There is no missing data in the dataset.
+There are 17506 data points in this dataset. There is no missing data in the dataset.
 The following table summarizes all the variables in the dataset:
 Variables	Type	Meaning
 Total cost	continuous	the cost ($) incurred to Drivetime to buy the vehicles

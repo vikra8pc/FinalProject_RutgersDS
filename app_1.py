@@ -426,7 +426,6 @@ X_ohe = pickle.load(pickle_off)
 cat_val = pickle.load(pickle_off)
 
 sel_row=[]
-
 # create route that renders index.html template
 @app.route("/", methods=["GET", "POST"])
 def index():
@@ -435,19 +434,18 @@ def index():
                 item = request.form["item"]
                 print(item)
                 for d in range(0,len(data)):
-                        if data[d]['Item']==item and len(sel_row)==0 :
+                        if data[d]['Item']==item:
                                 sel_row.append(data[d])
-                                # return render_template("index_1.html",data=sel_row)
-                                return "Thanks for the form data! Type /inputdata in URL to see the record selected"
+                
         return render_template("index.html", data=data)
-
-@app.route("/inputdata")
+# @app.route("/inputdata")
 def data1():
     print(sel_row)
     return render_template("index_1.html", data=sel_row)
 #     return jsonify(sel_row)
 
-@app.route("/inputdata/predict")
+
+@app.route("/predict")
 def predict():
     ''' pass the data in following format
     val_data_row = [{'cost': 4751, 'lot_time':126 , 'is_over_age': 'YES', 'mileage':77606, 'vehicle_type': 'ECONOMY',\

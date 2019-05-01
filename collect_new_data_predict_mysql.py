@@ -53,13 +53,10 @@ X_ohe = pickle.load(pickle_off)
 cat_val = pickle.load(pickle_off)
 
 sel_row = []
-
 @app.route("/api/data")
 def data():
     print(sel_row)
     return jsonify(sel_row)
-
-
 @app.route("/", methods=["GET", "POST"])
 def send():
     if request.method == "POST":
